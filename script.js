@@ -7,8 +7,11 @@
 // let description = document.querySelector('description')
 
 // console.log(title.value + ' ' + description.value)
+const taskElement = document.querySelector('.tasks')
 
 let saveTask = document.querySelector('.save-task');
+
+
 saveTask.addEventListener('click', () => {
     addTask()
 })
@@ -29,31 +32,28 @@ function addTask() {
 }
 
 function createTask(title, description) {
-    const taskElement = document.querySelector('.tasks')
-    let taskBlock = document.createElement('div')
-    taskBlock.classList.add('task')
-    let div = document.createElement('div')
+
+    let task = document.createElement('div')
+    task.classList.add('task')
+
     let a = document.createElement('p')
     let b = document.createElement('p')
 
     a.innerHTML = title
     b.innerHTML = description
 
-    taskBlock.append(a);
-    taskBlock.append(b);
-
-    taskElement.append(taskBlock)
+    task.append(a);
+    task.append(b);
+    taskElement.append(task)
 }
-
+let deleteEntry = document.querySelector('#deleteEntry')
 deleteEntry.addEventListener("click", () => {
-    deleteTask(" ")
+    deleteTask()
 })
 
 function deleteTask() {
-    titleInputEl.value = tasks.title
-    descriptionInputEl.value = tasks.description
-
-    deleteEntry.
+    let task = document.querySelector('.task')
+    taskElement.removeChild(task);
 
 }
 
